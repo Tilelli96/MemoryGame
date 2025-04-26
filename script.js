@@ -3,6 +3,7 @@ let selectedCards = [];
 let tentatives = 0;
 const maxTentatives = 10;
 const tentativesAffiche = document.getElementById("tentatives");
+const divMessages = document.getElementById('divMessages');
 
 // Créer une carte
 function createCard(cardURL) {
@@ -46,10 +47,17 @@ function flipCard(event) {
         second.classList.remove('flip');
         selectedCards = [];
 
-        if (tentatives >= maxTentatives
-        ) {
-          alert("Vous avez atteint la limite de tentatives. Le jeu recommence !");
-          location.reload();
+        if (tentatives >= maxTentatives) {
+          divMessages.classList.add('messages');
+          const p = document.createElement('p');
+          p.textContent = "Vous avez atteint la limite de tentatives. Le jeu recommence !";
+          divMessages.appendChild(p);
+
+          // Supprimer le message et redémarrer le jeu après 5 secondes
+          setTimeout(() => {
+            divMessages.innerHTML = ''; // Effacer le message
+            location.reload(); // Redémarrer le jeu après avoir effacé le message
+          }, 5000); // Le message disparaît après 5 secondes
         }
       }, 1000);
     }
@@ -57,15 +65,23 @@ function flipCard(event) {
     setTimeout(() => {
       const unmatched = document.querySelectorAll('.card:not(.matched)');
       if (unmatched.length === 0) {
-        alert('Bravo ! Vous avez gagné !');
-        location.reload();
+        divMessages.classList.add('messages');
+        const p = document.createElement('p');
+        p.textContent = "Bravo ! Vous avez gagné !";
+        divMessages.appendChild(p);
+
+        // Supprimer le message et redémarrer le jeu après 5 secondes
+        setTimeout(() => {
+          divMessages.innerHTML = ''; // Effacer le message
+          location.reload(); // Redémarrer le jeu après avoir effacé le message
+        }, 5000); // Le message disparaît après 5 secondes
       }
     }, 500);
   }
 }
 
 // Mettre à jour le nombre de tentatives affichées
-function updateAttempts() {
+function updateTentatives() {
   tentativesAffiche.textContent = maxTentatives - tentatives;
 }
 
