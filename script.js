@@ -53,11 +53,10 @@ function flipCard(event) {
           p.textContent = "Vous avez atteint la limite de tentatives. Le jeu recommence !";
           divMessages.appendChild(p);
 
-          // Supprimer le message et redémarrer le jeu après 5 secondes
           setTimeout(() => {
-            divMessages.innerHTML = ''; // Effacer le message
-            location.reload(); // Redémarrer le jeu après avoir effacé le message
-          }, 5000); // Le message disparaît après 5 secondes
+            divMessages.innerHTML = '';
+            location.reload();
+          }, 5000);
         }
       }, 1000);
     }
@@ -70,11 +69,10 @@ function flipCard(event) {
         p.textContent = "Bravo ! Vous avez gagné !";
         divMessages.appendChild(p);
 
-        // Supprimer le message et redémarrer le jeu après 5 secondes
         setTimeout(() => {
-          divMessages.innerHTML = ''; // Effacer le message
-          location.reload(); // Redémarrer le jeu après avoir effacé le message
-        }, 5000); // Le message disparaît après 5 secondes
+          divMessages.innerHTML = '';
+          location.reload();
+        }, 5000); 
       }
     }, 500);
   }
