@@ -3,7 +3,7 @@ body {
     width: 100%;
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: linear-gradient(to right, #74ebd5, #9face6);
+    background-image: linear-gradient(to right, #74ebd5, #9face6);
   }
   
   #game-board {
@@ -54,4 +54,13 @@ body {
     margin-top: 10px;
     font-weight: bold;
   }
-  
+
+  .messages {
+    background-color: #74ebd5;
+    padding: 10px;
+    margin: 5px;
+    font-weight: bold;
+    border-radius: 40px;
+    margin-inline: auto;
+    max-width: 400px;
+  }
