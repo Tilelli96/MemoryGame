@@ -54,4 +54,13 @@ body {
     margin-top: 10px;
     font-weight: bold;
   }
-  
+
+  .messages {
+    background-color: #74ebd5;
+    padding: 10px;
+    margin: 5px;
+    font-weight: bold;
+    border-radius: 20px solid;
+    margin-inline: auto;
+    max-width: 400px;
+  }

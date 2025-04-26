@@ -5,14 +5,14 @@ const maxTentatives = 10;
 const tentativesAffiche = document.getElementById("tentatives");
 
 // Créer une carte
-function createCard(cardURL) {
+function createCard(cardData) {
   const card = document.createElement('div');
   card.classList.add('card');
-  card.dataset.value = cardURL;
+  card.dataset.value = cardData.id;
 
   const img = document.createElement('img');
   img.classList.add('card-content');
-  img.src = cardURL;
+  img.src = cardData.url;
 
   card.addEventListener('click', flipCard);
   card.appendChild(img);
@@ -71,14 +71,14 @@ function updateAttempts() {
 
 // Créer toutes les cartes
 const cards = [
-  'https://picsum.photos/id/237/100/100',
-  'https://picsum.photos/id/238/100/100',
-  'https://picsum.photos/id/239/100/100',
-  'https://picsum.photos/id/240/100/100',
-  'https://picsum.photos/id/241/100/100',
-  'https://picsum.photos/id/242/100/100',
-  'https://picsum.photos/id/243/100/100',
-  'https://picsum.photos/id/244/100/100'
+  { id: 'cerf', url: '/media/cerf.jpg' },
+  { id: 'chiens', url: '/media/chiens.jpg' },
+  { id: 'hibou', url: '/media/hibou.jpg' },
+  { id: 'koala', url: '/media/koala.jpg' },
+  { id: 'lapin', url: '/media/lapin.jpg' },
+  { id: 'mouton', url: '/media/mouton.jpg' },
+  { id: 'poule', url: '/media/poule.jpg' },
+  { id: 'zebre', url: '/media/zebre.jpg' },
 ];
 
 function duplicateArray(array) {
